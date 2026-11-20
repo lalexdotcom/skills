@@ -62,10 +62,15 @@ Drop any section that would be empty. Aim for under ~80 lines: dense facts, no n
 
 ## 3. Print the prompt for the next session
 
-End your reply with the handoff path and a single fenced block the user can paste as-is into a new session. Write the prompt in the language the user speaks in this session. Template (English):
+End your reply with the handoff path and a single fenced block the user can paste as-is into a new session. Write the prompt in the language the user speaks in this session.
+
+The session is usually named after the first sentence of its first prompt, so the prompt must **open with the subject of the work**, not with the mechanics of the handoff. Start with a short, specific sentence naming the task in progress (e.g. "Continue the OAuth refresh-token migration in the API client.", "Reprise de la migration des tokens OAuth du client API."). Never start with "Read the handoff file…", "Handoff…" or "Fichier de reprise…".
+
+Template (English):
 
 ````
 ```
+<One short sentence naming the work in progress — this becomes the session name.>
 Read the handoff file <absolute path>, then delete it immediately (`rm <absolute path>`) — it is disposable and its content is now in your context. Treat it as the state of the work; check that the branch and working tree match its "State" section (tell me if they don't), then continue from the first step of "Next". Do not re-ask the user about anything listed under "Decisions".
 ```
 ````
